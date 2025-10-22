@@ -4,32 +4,34 @@ import Image from 'next/image';
 // Removed unused import: import { team } from "@/data/sample";
 // Removed problematic import: import TeamCard from "@/components/team/TeamCard"; 
 
-// ADDED: Type definition for TeamMember structure. 
-// This is typically imported from a types file in a larger project (e.g., 'import type { TeamMember } from "@/data/types";')
-// The JSDoc below serves as documentation and allows IDEs (like VS Code) to provide type-checking and autocompletion 
-// even in a JavaScript file, which is the best practice fix for a missing type.
+// --- FIX: ADDED PROPER TYPESCRIPT INTERFACES ---
 
-/**
- * @typedef {object} Socials
- * @property {string} linkedin
- * @property {string} [twitter]
- * @property {string} email
- */
+interface Socials {
+  linkedin: string;
+  // Make twitter optional as it's not present on all members' data
+  twitter?: string; 
+  email: string;
+}
 
-/**
- * @typedef {object} TeamMember
- * @property {number} id
- * @property {string} name
- * @property {string} title
- * @property {string} imageUrl
- * @property {Socials} socials
- */
+// The main type for a team member, used for data arrays and component props
+interface TeamMember {
+  id: number;
+  name: string;
+  title: string;
+  imageUrl: string;
+  socials: Socials;
+}
+
+// Interface for the TeamCard component props
+interface TeamCardProps {
+    TeamMember: TeamMember; // Explicitly type the destructured prop
+}
 
 export const metadata = { title: "Team" };
 
 // Mock data structure for the team members (11 total)
-/** @type {TeamMember[]} */
-const teamMembers = [
+// FIX: Explicitly typed the array
+const teamMembers: TeamMember[] = [
   {
     id: 1,
     name: 'Ch Pradeeptha',
@@ -110,31 +112,28 @@ const teamMembers = [
 ];
 
 // Mock data for Faculty Coordinators
-/** @type {TeamMember[]} */
-const facultyCoordinators = [
+// FIX: Explicitly typed the array
+const facultyCoordinators: TeamMember[] = [
     {
         id: 1,
         name: 'Ms Samala Bhavana',
         title: 'Faculty Coordinator (CSE-DS)',
         imageUrl: 'https://i.postimg.cc/qqxvQmDc/Orange-Get-your-Business-certificate-Instagram-Post.png',
-        socials: { linkedin: '#', email: 'john.smith@cmrit.in' },
+        // Removed `twitter` since it's not present in the data for consistency (though it's optional in the interface)
+        socials: { linkedin: '#', email: 'john.smith@cmrit.in' }, 
     },
     {
         id: 2,
         name: 'Mrs Tejovathi',
         title: 'Department Head (CSE-DS)',
         imageUrl: 'https://i.postimg.cc/qqxvQmDc/Orange-Get-your-Business-certificate-Instagram-Post.png',
-        socials: { linkedin: '#', email: 'jane.doe@cmrit.in' },
+        // Removed `twitter` since it's not present in the data for consistency
+        socials: { linkedin: '#', email: 'jane.doe@cmrit.in' }, 
     },
 ];
 
-// FIX: TeamCard definition changed to a standard const function component
-// The issue was likely due to the arrow function syntax conflicting with how Next.js processes local components.
-
-/**
- * @param {{TeamMember: TeamMember}} props
- */
-const TeamCard = ({ TeamMember }) => {
+// FIX: TeamCard definition now explicitly types its props using the TeamCardProps interface
+const TeamCard = ({ TeamMember }: TeamCardProps) => {
     return (
         <div className="card relative p-0 overflow-hidden">
             {/* Image Section - Increased height to h-72 */}
