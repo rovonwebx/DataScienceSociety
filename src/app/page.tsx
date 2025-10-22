@@ -1,9 +1,7 @@
-// src/app/page.tsx
-
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
-import ContractCard from "@/components/ui/ContractCard"; 
+// FIX: Removed the unused import 'ContractCard'
 import Image from 'next/image'; 
 
 // Data declarations (already moved outside of component scope or declared correctly)
