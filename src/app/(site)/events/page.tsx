@@ -49,7 +49,7 @@ export default function Page() {
               <div className="flex items-center justify-between"><span className="text-muted">Date</span><span>24 Oct 2025</span></div>
               <div className="flex items-center justify-between"><span className="text-muted">Venue</span><span>CMRIT Hyderabad</span></div>
               <div className="flex items-center justify-between"><span className="text-muted">Team size</span><span>1–2 members</span></div>
-              <div className="flex items-center justify-between"><span className="text-muted">Registration fee</span><span>₹199 per team</span></div>
+              <div className="flex items-center justify-between"><span className="text-muted">Registration fee</span><span>₹80 per team</span></div>
               <div className="flex items-center justify-between"><span className="text-muted">Contact</span><span>dss@cmrithyderabad.edu.in</span></div>
             </div>
           </div>
