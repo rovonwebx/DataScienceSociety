@@ -1,12 +1,15 @@
+// src/app/page.tsx
+
 import Section from "@/components/ui/Section";
 import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
-// FIX: Removed the unused import 'ContractCard'
-import Image from 'next/image'; 
+import ContractCard from "@/components/ui/ContractCard"; 
+import Image from 'next/image'; // Ensure Next.js Image component is imported
+import React from 'react'; // Ensure React is imported for JSX
 
 // Data declarations (already moved outside of component scope or declared correctly)
 const teamMembers = [
-  // ... teamMembers data remains the same ...
+  // Using simplified data with only the 4 members currently displayed on the Home page
   {
     id: 1,
     name: 'Ch Pradeeptha',
@@ -163,8 +166,8 @@ export default function Home() {
                 <a href="/join" className="rounded-full px-7 py-3 text-lg font-medium bg-gray-900 text-white hover:bg-gray-700 transition">Join the Club</a>
                 <a 
         href="/events" 
-        // Changed text-gray-900 to text-black and kept the hover background light to ensure visibility.
-        className="rounded-full px-7 py-3 text-lg font-medium border-2 border-gray-900 text-black hover:bg-gray-900 transition"
+        // Corrected text color to black/dark for visibility on the bright green hero
+        className="rounded-full px-7 py-3 text-lg font-medium border-2 border-gray-900 text-gray-900 hover:bg-gray-100 transition"
     >
         View Events
     </a>
