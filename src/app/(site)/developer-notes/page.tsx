@@ -27,9 +27,19 @@ export default function Page() {
         the DSS App and Web Portal.
       */}
       <section className="mt-8">
-        <div className="card p-6">
-          <h2 className="text-xl font-bold mb-4">Official Project Documentation (v0.1)</h2>
-          <div className="space-y-4 text-sm leading-relaxed">
+        {/* Added 'relative overflow-hidden' to make the watermark position correctly and contain it */}
+        <div className="card p-6 relative overflow-hidden">
+          {/*
+            Watermark Element -
+            Updated to use the green color: text-[color:var(--accent)] (which seems to be the green/lime color in the existing theme)
+            Maintained large size, rotation, dark appearance (opacity-40 and text-white/10 was used before, now adjusting opacity on the accent color)
+          */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rotate-[-30deg] text-[20rem] font-black text-[color:var(--accent)] pointer-events-none select-none z-0 tracking-widest opacity-10 whitespace-nowrap">
+            GEARUP
+          </div>
+
+          <h2 className="text-xl font-bold mb-4 relative z-10">Official Project Documentation (v0.1)</h2>
+          <div className="space-y-4 text-sm leading-relaxed relative z-10">
             <p>
               The <strong>Data Science Society (DSS) App and Web Portal</strong> for <strong>CMR Institute of Technology, Hyderabad</strong> have been officially developed and deployed by <strong>GearUp Student Community</strong> as part of an institutional digital initiative to centralize and modernize the activities of the Data Science Society. This project serves as an integrated digital ecosystem — consisting of a <strong>mobile application</strong> and an <strong>interactive webpage</strong> — both designed to provide easy access to DSS announcements, events, projects, research content, and resources for students and faculty. The complete ecosystem runs on <strong>GearUp’s THV1 version</strong>, ensuring stable, secure, and high-performance functionality across all platforms. Both the app and webpage are <strong>deployed and hosted on Cloudflare</strong>, providing global CDN delivery, SSL protection, and optimization for speed and availability.
             </p>
@@ -53,7 +63,7 @@ export default function Page() {
               The app is titled <em>“DSS – CMRIT Hyderabad”</em>, with the package name <em>com.gearup.dsscmrit</em>, and is currently at version <em>v0.1</em>. The web version shares the same naming convention, titled <em>“DSS Web Portal – CMRIT Hyderabad”</em>, accessible under the official GearUp-managed domain. Both are optimized for Android (version 8.0 and above) and all major browsers. The app size is approximately 45 MB, while the webpage’s optimized build size is under 20 MB. Both are classified under the <strong>Educational / Institutional</strong> category and are actively managed under GearUp’s internal maintenance cycle. The initial release and deployment date for both the app and website were completed in <strong>October 2025</strong>, under the supervision of the GearUp DevOps team.
             </p>
             <p>
-              The <strong>development and deployment team</strong> include members from the GearUp Developer Division, GearUp Creative Team (for UI/UX), and the Faculty Coordinator and Core Members of the <strong>Data Science Society, CMR Institute of Technology</strong>. The project’s lead developer from GearUp oversaw the implementation, integration, and deployment cycles, while the creative division handled visual design, responsive layouts, and testing. The DSS Faculty Coordinator guided the technical direction, reviewed app content, and ensured institutional compliance, while the DSS student core team provided project information, images, and event updates used in the static content files.
+              The <strong>development and deployment team</strong> include members from the GearUp Developer Division, GearUp Creative Team (for UI/UX), and the Faculty Coordinator and Core Members of the <strong>Data Science Society, CMR Institute of Technology</strong>. The **Web Development Lead** for this project was <span className="text-[color:var(--accent)]">Rishi Rohan Kalapala</span> and the **App Development Lead** was <span className="text-[color:var(--accent)]">Shubhang Guntaka</span>, both from the <span className="text-[color:var(--accent)]">GearUp Student Community</span>. They oversaw the implementation, integration, and deployment cycles, while the creative division handled visual design, responsive layouts, and testing. The DSS Faculty Coordinator guided the technical direction, reviewed app content, and ensured institutional compliance, while the DSS student core team provided project information, images, and event updates used in the static content files.
             </p>
             <p>
               For communication, support, or future collaborations, GearUp Student Community can be contacted through <a href="mailto:gearupofficial@gmail.com" className="text-[color:var(--accent)]">rishiworks@aol.com</a> or via official channels from <strong>Hyderabad, Telangana</strong>. All technical maintenance and updates will continue to be managed through GearUp’s internal DevOps schedule. This document has been reviewed and approved by the <strong>GearUp Development Head</strong> and officially marks the deployment of both the DSS App and Web Portal under version <strong>v0.1</strong>, hosted securely on Cloudflare as of <strong>October 2025</strong>.
@@ -61,7 +71,7 @@ export default function Page() {
           </div>
         </div>
       </section>
-      
+
       {/* This grid layout holds the "Tech Stack" and "Project Structure" sections side-by-side on medium screens and larger. */}
       <section className="mt-8 grid md:grid-cols-2 gap-6">
         {/*
