@@ -7,36 +7,36 @@ import ContractCard from "@/components/ui/ContractCard";
 import Image from 'next/image'; // Ensure Next.js Image component is imported
 import React from 'react'; // Ensure React is imported for JSX
 
-// Data declarations (already moved outside of component scope or declared correctly)
+// Data declarations (outside Home for simplicity, but used inside)
 const teamMembers = [
-  // Using simplified data with only the 4 members currently displayed on the Home page
+  // Using only the 4 members currently displayed on the Home page
   {
     id: 1,
     name: 'Ch Pradeeptha',
     title: 'President',
-    imageUrl: 'https://i.postimg.cc/qqxvQmDc/Orange-Get-your-Business-certificate-Instagram-Post.png',
-    socials: { linkedin: '#', twitter: '#', email: 'ch.pradeeptha@dss.in' },
+    imageUrl: 'https://i.postimg.cc/Nj3r1KvD/Whats-App-Image-2025-10-21-at-22-08-26.jpg',
+    socials: { linkedin: 'https://www.linkedin.com/in/pradeeptha-ch-943450335/', twitter: '#', email: 'ch.pradeeptha@dss.in' },
   },
   {
     id: 2,
     name: 'S.L.N. Prasanna Kumar',
     title: 'President',
     imageUrl: 'https://i.postimg.cc/76MffQNR/IMG-20251012-215845055.jpg',
-    socials: { linkedin: '#', twitter: '#', email: 'sln.prasanna@dss.in' },
+    socials: { linkedin: 'https://www.linkedin.com/in/sriramoji-prasanna-kuamrkumar-kumar-8333a032b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', twitter: '#', email: 'sln.prasanna@dss.in' },
   },
   {
     id: 3,
     name: 'M. Laxmi Prasanna',
     title: 'Vice President',
-    imageUrl: 'https://i.postimg.cc/gJSrVLft/Snapchat-56968846.jpg',
-    socials: { linkedin: '#', twitter: '#', email: 'm.laxmi@dss.in' },
+    imageUrl: 'https://i.postimg.cc/X7FWrqxY/Whats-App-Image-2025-10-22-at-19-50-11.jpg',
+    socials: { linkedin: 'https://www.linkedin.com/in/laxmi-prasanna-659973332?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app', twitter: '#', email: 'm.laxmi@dss.in' },
   },
   {
-    id: 4,
-    name: 'O Sai Krishna Swaran',
-    title: 'Treasurer',
-    imageUrl: 'https://i.postimg.cc/fbyZQq3m/IMG-20251021-WA0002.jpg',
-    socials: { linkedin: '#', twitter: '#', email: 'o.sai@dss.in' },
+    id: 8,
+    name: 'P V Yashwanth',
+    title: 'Projects Lead',
+    imageUrl: 'https://i.postimg.cc/W3ZnDjDQ/Whats-App-Image-2025-10-21-at-19-44-03-b253a3ed.jpg',
+    socials: { linkedin: 'https://www.linkedin.com/in/yashwanth-paleti', twitter: '#', email: 'pv.yashwanth@dss.in' },
   },
 ];
 
@@ -130,7 +130,19 @@ export default function Home() {
     ],
     contributors: 'DSS Editorial Team'
   }
+  
+  // Data array for social proof phrases (Not used anymore, but kept for context if needed later)
+  const socialProofWords = [
+      "Game-Changer",
+      "5 Stars",
+      "More Productive",
+      "Less Stress",
+      "Highly Recommended",
+      "Saves Time",
+      "Must-Have for Students"
+    ];
 
+  // Removed SocialProof Component Logic
 
   return (
     <div className="relative overflow-hidden">
@@ -177,6 +189,20 @@ export default function Home() {
         </div>
       </section>
       
+      {/* NEW: MODERN BLACK QUOTE SECTION (Replacing Social Proof Marquee) */}
+      <section id="quote-section" className="w-full py-12">
+        <Card className="p-8 md:p-12 text-center relative overflow-hidden">
+            {/* Background element for visual interest, subtle pattern */}
+            <div className="absolute inset-0 -z-10 opacity-5" aria-hidden>
+                <div className="w-full h-full bg-no-repeat bg-center" style={{ backgroundImage: "radial-gradient(circle at center, #ffffff 1px, transparent 1px)", backgroundSize: "10px 10px" }}></div>
+            </div>
+
+            <p className="text-xl sm:text-2xl font-light italic text-muted max-w-4xl mx-auto leading-relaxed">
+                &ldquo;The greatest value of a <span className='text-[color:var(--accent)] font-medium not-italic'>picture</span> is when it forces us to notice what we never expected to <span className='text-[color:var(--accent)] font-medium not-italic'>see</span>.&rdquo;
+            </p>
+        </Card>
+      </section>
+
       {/* WHY JOIN US? SECTION - Title reverted to string, Headings Highlighted internally */}
       <Section title="Why Join Us?" subtitle="Unlock your potential in Data Science">
         <div id="join-benefits" className="grid grid-cols-1 md:grid-cols-5 gap-6">
@@ -311,13 +337,13 @@ export default function Home() {
         </div>
       </Section>
 
-      {/* UPDATED TEAM SECTION: Uses the structure from the Team Page and Next.js Image */}
+      {/* UPDATED TEAM SECTION: Uses the structure from the Team Page and Next.js Image. Height increased to h-80. */}
       <Section title="Meet the Team" subtitle="People behind the club">
         <div id="team" className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {teamMembers.slice(0, 4).map((member) => (
             <Card key={member.id} className="relative p-0 overflow-hidden">
-                {/* Image Section - Increased height to h-64 */}
-                <div className="relative h-64 w-full"> 
+                {/* Image Section - **HEIGHT INCREASED TO h-80** */}
+                <div className="relative h-80 w-full"> 
                     {/* Replaced <img> with Next.js <Image /> component for performance */}
                     <Image 
                       src={member.imageUrl} 
@@ -432,15 +458,15 @@ export default function Home() {
             <ul className="mt-3 grid gap-3 text-sm">
               <li>
                 <span className="text-muted">Email</span>
-                <div className="text-foreground">dss@cmrithyderabad.edu.in</div>
+                <div className="text-foreground">cmritdatasciencesociety@gmail.com</div>
               </li>
               <li>
                 <span className="text-muted">Location</span>
                 <div className="text-foreground">CMRIT Hyderabad, Data Science Society Room</div>
               </li>
               <li>
-                <span className="text-muted">Office Hours</span>
-                <div className="text-foreground">Wed–Fri, 3:00–5:00 PM</div>
+                <span className="text-muted">Club Hours</span>
+                <div className="text-foreground">Wed–Fri, 3:00 PM – 4:00 PM</div>
               </li>
             </ul>
             <div className="mt-4">
@@ -469,41 +495,30 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section title="Join the Club" subtitle="Become a member">
-        <div id="join" className="grid md:grid-cols-5 gap-5">
-          <Card className="p-6 md:col-span-2">
-            <div className="font-medium">Membership <span className='text-[color:var(--accent)]'>Benefits</span></div>
-            <ul className="mt-3 grid gap-2 text-sm">
-              <li>• Priority access to events and workshops</li>
-              <li>• Project showcases and mentorship</li>
-              <li>• Networking with industry and alumni</li>
-              <li>• Member-only resources and study groups</li>
-            </ul>
-            <div className="mt-4">
-              <div className="text-sm text-muted">Tracks</div>
-              <div className="mt-2 flex flex-wrap gap-2">
-                <span className="rounded-full border border-white/[0.12] px-3 py-1 text-xs">ML</span>
-                <span className="rounded-full border border-white/[0.12] px-3 py-1 text-xs">Data Viz</span>
-                <span className="rounded-full border border-white/[0.12] px-3 py-1 text-xs">MLOps</span>
-                <span className="rounded-full border border-white/[0.12] px-3 py-1 text-xs">Research</span>
-              </div>
+      {/* REPLACED: Original Join the Club section is replaced with this prominent Quote/Final CTA */}
+      <Section title="Ready to Lead?" subtitle="Your journey in Data Science starts here">
+        <Card className="relative p-10 md:p-16 text-center overflow-hidden" 
+              style={{ 
+                background: 'color-mix(in oklab, var(--accent) 15%, #0a0a0a)', 
+                border: '1px solid var(--accent)',
+                boxShadow: '0 0 40px rgba(var(--accent-rgb), 0.2)' // Added a glow for prominence
+              }}>
+            
+            {/* Quote (Motto) */}
+            <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-foreground max-w-4xl mx-auto">
+                &quot;Innovate. Analyze. <span className='text-[color:var(--accent)]'>Lead.</span>&quot;
+            </h3>
+            <p className="mt-4 text-lg text-muted max-w-2xl mx-auto">
+                Join the Data Science Society and transform your ideas into industry-leading projects.
+            </p>
+            
+            {/* Final CTA Button */}
+            <div className="mt-8 flex justify-center gap-4">
+                <Button asChild className="px-8 py-4 text-lg font-semibold">
+                    <a href="/join">Become a Member Now</a>
+                </Button>
             </div>
-          </Card>
-          <Card className="p-6 md:col-span-3">
-            <div className="font-medium">Join the <span className='text-[color:var(--accent)]'>Society</span></div>
-            <div className="mt-4 h-[500px]">
-              <iframe
-                title="Join Form"
-                src="https://docs.google.com/forms/d/e/JOIN_FORM_ID/viewform?embedded=true"
-                width="100%"
-                height="100%"
-                frameBorder={0}
-                marginHeight={0}
-                marginWidth={0}
-              >Loading…</iframe>
-            </div>
-          </Card>
-        </div>
+        </Card>
       </Section>
 
     </div>
