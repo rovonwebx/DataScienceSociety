@@ -16,15 +16,15 @@ export default function Page() {
           <div className="space-y-4">
             <div>
               <div className="text-sm text-muted">Email</div>
-              <div className="text-foreground">dss@cmrithyderabad.edu.in</div>
+              <div className="text-foreground"> cmritdatasciencesociety@gmail.com</div>
             </div>
             <div>
               <div className="text-sm text-muted">Location</div>
               <div className="text-foreground">CMRIT Hyderabad, Data Science Society Room</div>
             </div>
             <div>
-              <div className="text-sm text-muted">Office Hours</div>
-              <div className="text-foreground">Wed–Fri, 3:00–5:00 PM</div>
+              <div className="text-sm text-muted">Club Hours</div>
+              <div className="text-foreground">Wed–Fri, 3:00 PM – 4:00 PM</div>
             </div>
           </div>
         </div>
